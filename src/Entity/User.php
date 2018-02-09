@@ -24,4 +24,11 @@ class User {
      */
     private $id;
 
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Borrow", mappedBy="user")
+     */
+    private $borrows;
+
 }

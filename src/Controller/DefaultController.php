@@ -15,6 +15,7 @@ class DefaultController extends Controller
      */
     public function index()
     {
-        return $this->render('default/index.html.twig');
+        $books = $this->getDoctrine()->getRepository('App:Book')->findLast(2);
+        return $this->render('default/index.html.twig', ['books' => $books]);
     }
 }
