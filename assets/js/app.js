@@ -1,3 +1,6 @@
+var $ = require('jquery');
+require('bootstrap-sass');
+
 var booksMap = null;
 
 function initBooksMap() {
