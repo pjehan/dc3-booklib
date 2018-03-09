@@ -41,6 +41,9 @@
                             <li><a href="#">Thriller</a></li>
                         </ul>
                     </li>
+                    {% if app.user %}
+                        <li><a href="{{ path('box_suggest') }}">Proposer une boite</a></li>
+                    {% endif %}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -49,7 +52,11 @@
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-user fa-green fa-stack-1x"></i>
                                     </span>
-                            Mon Compte
+                            {% if app.user %}
+                                {{ app.user.username }}
+                            {% else %}
+                                Mon Compte
+                            {% endif %}
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
